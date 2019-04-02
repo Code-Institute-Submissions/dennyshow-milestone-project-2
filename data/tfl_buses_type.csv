@@ -1,0 +1,100 @@
+bus_type,drive_train_type,year,number_of_buses
+New Routemaster,Hybrid,2010,0
+Routemaster,Diesel,2010,18
+Artic,Diesel,2010,320
+Single deck,Diesel,2010,2676
+Single deck,Fuel Cell/Hybrid,2010,0
+Single deck,Hybrid,2010,27
+Single deck,Electric,2010,0
+Double deck,Diesel,2010,5554
+Double deck,Hybrid,2010,29
+Double deck,Electric,2010,0
+Total,Total,2010,8624
+New Routemaster,Hybrid,2011,0
+Routemaster,Diesel,2011,18
+Artic,Diesel,2011,260
+Single deck,Diesel,2011,2670
+Single deck,Fuel Cell/Hybrid,2011,5
+Single deck,Hybrid,2011,27
+Single deck,Electric,2011,0
+Double deck,Diesel,2011,5487
+Double deck,Hybrid,2011,79
+Double deck,Electric,2011,0
+Total,Total,2011,8546
+New Routemaster,Hybrid,2012,5
+Routemaster,Diesel,2012,19
+Artic,Diesel,2012,0
+Single deck,Diesel,2012,2661
+Single deck,Fuel Cell/Hybrid,2012,5
+Single deck,Hybrid,2012,33
+Single deck,Electric,2012,0
+Double deck,Diesel,2012,5787
+Double deck,Hybrid,2012,233
+Double deck,Electric,2012,0
+Total,Total,2012,8743
+New Routemaster,Hybrid,2013,8
+Routemaster,Diesel,2013,20
+Artic,Diesel,2013,0
+Single deck,Diesel,2013,2608
+Single deck,Fuel Cell/Hybrid,2013,5
+Single deck,Hybrid,2013,28
+Single deck,Electric,2013,0
+Double deck,Diesel,2013,5696
+Double deck,Hybrid,2013,352
+Double deck,Electric,2013,0
+Total,Total,2013,8717
+New Routemaster,Hybrid,2014,168
+Routemaster,Diesel,2014,19
+Artic,Diesel,2014,0
+Single deck,Diesel,2014,2606
+Single deck,Fuel Cell/Hybrid,2014,8
+Single deck,Hybrid,2014,23
+Single deck,Electric,2014,2
+Double deck,Diesel,2014,5296
+Double deck,Hybrid,2014,643
+Double deck,Electric,2014,0
+Total,Total,2014,8765
+New Routemaster,Hybrid,2015,432
+Routemaster,Diesel,2015,19
+Artic,Diesel,2015,0
+Single deck,Diesel,2015,2662
+Single deck,Fuel Cell/Hybrid,2015,8
+Single deck,Hybrid,2015,23
+Single deck,Electric,2015,8
+Double deck,Diesel,2015,5026
+Double deck,Hybrid,2015,799
+Double deck,Electric,2015,0
+Total,Total,2015,8977
+New Routemaster,Hybrid,2016,736
+Routemaster,Diesel,2016,10
+Artic,Diesel,2016,0
+Single deck,Diesel,2016,2617
+Single deck,Fuel Cell/Hybrid,2016,8
+Single deck,Hybrid,2016,18
+Single deck,Electric,2016,17
+Double deck,Diesel,2016,4794
+Double deck,Hybrid,2016,981
+Double deck,Electric,2016,5
+Total,Total,2016,9186
+New Routemaster,Hybrid,2017,953
+Routemaster,Diesel,2017,10
+Artic,Diesel,2017,0
+Single deck,Diesel,2017,2612
+Single deck,Fuel Cell/Hybrid,2017,8
+Single deck,Hybrid,2017,18
+Single deck,Electric,2017,66
+Double deck,Diesel,2017,4380
+Double deck,Hybrid,2017,1564
+Double deck,Electric,2017,5
+Total,Total,2017,9616
+New Routemaster,Hybrid,2018,1000
+Routemaster,Diesel,2018,10
+Artic,Diesel,2018,0
+Single deck,Diesel,2018,2587
+Single deck,Fuel Cell/Hybrid,2018,10
+Single deck,Hybrid,2018,13
+Single deck,Electric,2018,91
+Double deck,Diesel,2018,3453
+Double deck,Hybrid,2018,2227
+Double deck,Electric,2018,5
+Total,Total,2018,9396
