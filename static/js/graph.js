@@ -2,10 +2,10 @@ queue()
     .defer(d3.csv, "data/tfl_buses_type.csv")
     .await(createGraphs);
     
-function createGraphs(error, busesData) {
-    var ndx = crossfilter(busesData);
-    busesData.forEach(function(d){
-        d.number_of_buses = parseInt(d.number_of_buses);
+function createGraphs(error, ndx) {
+    var ndx = crossfilter(ndx);
+    (function(d){
+     d.number_of_buses = parseInt(d.number_of_buses);
     });
     
     show_total_number_of_buses_per_year(ndx);
@@ -45,60 +45,43 @@ function show_bus_fuel(ndx) {
         
 }
 
+
 function show_total_number_of_buses_per_year(ndx) {
-    function show_total_number_of_buses_per_year(busesData) {
-        var parseYear = d3.time.format("%d/%m/%Y").parse;
-        busesData.forEach(function(d) {
-        d.year = parseYear(d.year);
-      });
-    } 
-      var year_dim = ndx.dimension(dc.pluck('year'));
-      
-      var minYear = year_dim.bottom(1)[0].year;
-      var maxYear = year_dim.top(1)[0].year;
-      
-      var articTypeBus = year_dim.group().reduceSum(function (d) {
-        if (d.bus_type === 'Artic') {
-            return +d.number_of_buses;
-        } else {
-            return 0;
-        }
-    });
+            
+            var year_dim = ndx.dimension(dc.pluck('year'));
+            var parseYear = d3.time.format("%d/%m/%Y").parse;
     
-      var singleDeckTypeBus = year_dim.group().reduceSum(function (d) {
-        if (d.bus_type === 'Single deck') {
-            return +d.number_of_buses;
-        } else {
-            return 0;
-        }
-    });
-    
-      var doubleDeckTypeBus = year_dim.group().reduceSum(function (d) {
-        if (d.bus_type === 'Double deck') {
-            return +d.number_of_buses;
-        } else {
-            return 0;
-        }
-    });
-    
-      var routeMasterTypeBus = year_dim.group().reduceSum(function (d) {
-        if (d.bus_type === 'Routemaster') {
-            return +d.number_of_buses;
-        } else {
-            return 0;
-        }
-    });
-    
-      var newRouteMasterTypeBus = year_dim.group().reduceSum(function (d) {
-        if (d.bus_type === 'New Routemaster') {
-            return +d.number_of_buses;
-        } else {
-            return 0;
-        }
-    });
-    
-    var compositeChart = dc.compositeChart('#yearly-number-of-buses');
-    compositeChart
+            var minYear = year_dim.bottom(1)[0].year;
+            var maxYear = year_dim.top(1)[0].year;
+            
+            function bus_total_per_year(busType) {
+                return function (ndx) {
+                    if (ndx.bus_type === busType) {
+                        return +ndx.number_of_buses;
+                    } else {
+                        return 0;
+                    }
+                }
+            }
+            
+            
+          var articTypeBus = year_dim.group().reduceSum(bus_total_per_year('Artic'));
+          
+               
+          var singleDeckTypeBus = year_dim.group().reduceSum(bus_total_per_year('Single deck'));
+          
+               
+          var doubleDeckTypeBus = year_dim.group().reduceSum(bus_total_per_year('Double deck'));
+               
+               
+          var routeMasterTypeBus = year_dim.group().reduceSum(bus_total_per_year('Routemaster'));
+          
+               
+          var newRouteMasterTypeBus = year_dim.group().reduceSum(bus_total_per_year('New Routemaster'));
+          
+          
+          var compositeChart = dc.compositeChart('#yearly-number-of-buses');
+          compositeChart
             .width(850)
             .height(350)
             .dimension(year_dim)
@@ -126,8 +109,10 @@ function show_total_number_of_buses_per_year(ndx) {
             .brushOn(false);
             
     dc.renderAll();
-    
-  }
+            
+}
+
+
     
 
 function show_total_number_of_buses(ndx) {
@@ -162,3 +147,4 @@ function show_years_of_buses(ndx) {
     dc.renderAll();
         
 }
+
