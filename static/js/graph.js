@@ -137,7 +137,7 @@ function show_total_number_of_buses_per_year(ndx) {
           
       var compositeChart = dc.compositeChart('#yearly-number-of-buses');
           compositeChart
-            .width(700)
+            .width(650)
             .height(350)
             .dimension(year_dim)
             .x(d3.time.scale().domain([minYear, maxYear]))
@@ -190,7 +190,7 @@ function show_buses_mostly_used_per_year(ndx) {
         
         var most_chart = dc.scatterPlot("#most-used-buses");
         most_chart
-            .width(768)
+            .width(650)
             .height(480)
             .x(d3.time.scale().domain([min_year, max_year]))
             .brushOn(false)
