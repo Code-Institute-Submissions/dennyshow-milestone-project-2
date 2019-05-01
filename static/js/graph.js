@@ -1,12 +1,18 @@
+// queuing data and passing it into d3 to create graphs
 queue()
-    .defer(d3.csv, "data/tfl_buses_type.csv")
+    .defer(d3.csv, "data/tfl_buses_type.csv") 
     .await(createGraphs);
     
+    // passing ndx into crossfilter
 function createGraphs(error, ndx) {
     var ndx = crossfilter(ndx);
+    
+    // calling parseInt on number_of_buses in data CSV file to display numbers only as a whole number
     (function(d){
      d.number_of_buses = parseInt(d.number_of_buses);
     });
+    
+    // This are the functions called to build each specified graphs
     
     show_total_number_of_buses_per_year(ndx);
     show_years_of_buses(ndx);
@@ -15,29 +21,30 @@ function createGraphs(error, ndx) {
     show_bus_fuel(ndx);
     show_buses_mostly_used_per_year(ndx);
     
-    // show_percenatge_of_buses(ndx, "Single deck", "#percentage-of-single-deck-bus");
-    // show_percenatge_of_buses(ndx, "Double deck", "#percentage-of-double-deck-bus");
-    
-    // show_percenatge_of_buses(ndx, "Artic", "#percentage-of-artic-bus");
-    // show_percenatge_of_buses(ndx, "Routemaster", "#percentage-of-routemaster-bus");
-    // show_percenatge_of_buses(ndx, "New Routemaster", "#percentage-of-new-routemaster-bus");
 
 
    dc.renderAll();
 }
 
+// calling data for types of buses
+
 function show_bus_types(ndx) {
     dim = ndx.dimension(dc.pluck('bus_type'));
     group = dim.group()
     
+    // calling dc selectMenu to allow selections of our various buses 
     dc.selectMenu("#types-of-buses")
         .dimension(dim)
         .group(group);
 }
 
+// calling data for types of fuel
+
 function show_bus_fuel(ndx) {
     var dim = ndx.dimension(dc.pluck('drive_train_type'));
     var group = dim.group();
+    
+    // creating bar chart for types of fuel
     
     dc.barChart("#types-of-fuel")
         .width(550)
@@ -54,60 +61,19 @@ function show_bus_fuel(ndx) {
 }
 
 
-
-// function show_percenatge_of_buses(ndx, bus_type, element) {
-//     var percentageThatAreSingleBuses = ndx.groupAll().reduce(
-//         function(p, v){
-//             if (v.transport === bus_type) {
-//                   p.count++;
-//                 if (v.drive_train_type === "Diesel") {
-//                     p.are_single++;
-//                 }
-//             }
-            
-//             return p;
-            
-//       },
-       
-//       function(p, v){
-//              if (v.transport === bus_type) {
-//                   p.count--;
-//                 if (v.drive_train_type === "Diesel") {
-//                     p.are_single--;
-//                 }
-//             }
-            
-//             return p;
-//       },
-       
-//       function() {
-//             return {count: 0 , are_single: 0};
-//       }
-//      );
-     
-//     //  console.log(percentageThatAreSingleBuses);
-     
-//     dc.numberDisplay("#percentage-of-single-deck-bus")
-//         .formatNumber(d3.format(".2%"))
-//         .valueAccessor(function (d) {
-//             if (d.count == 0) {
-//                 return 0;
-//             } else{
-//                 return (d.are_single / d.count);
-//             }
-//         })
-//         .group(percentageThatAreSingleBuses);
-        
-    
-// }
-
+// function to create data for total number of buses per year and types
 
 function show_total_number_of_buses_per_year(ndx) {
+            // passing crossfilter into variables
             
         var year_dim = ndx.dimension(dc.pluck('year'));
-    
+        
+            // setting max and min year to be displayed
+            
         var minYear = year_dim.bottom(1)[0].year;
         var maxYear = year_dim.top(1)[0].year;
+            
+            // function to create the total number of buses by bus type.
             
         function bus_total_per_year(busType) {
             return function (ndx) {
@@ -118,7 +84,7 @@ function show_total_number_of_buses_per_year(ndx) {
               }
         };
     }
-            
+            // variables was used to match each bus type and the total number of bus in each bus type 
             
       var articTypeBus = year_dim.group().reduceSum(bus_total_per_year('Artic'));
           
@@ -133,16 +99,18 @@ function show_total_number_of_buses_per_year(ndx) {
           
                
       var newRouteMasterTypeBus = year_dim.group().reduceSum(bus_total_per_year('New Routemaster'));
+      
           
+       // plotting a compositeChart
           
       var compositeChart = dc.compositeChart('#yearly-number-of-buses');
           compositeChart
-            .width(650)
+            .width(700)
             .height(350)
             .dimension(year_dim)
             .x(d3.time.scale().domain([minYear, maxYear]))
             .yAxisLabel("Numbers Of Buses")
-            .margins({top:20, right:50, bottom:30, left:70})
+            .margins({top:20, right:30, bottom:30, left:70})
             .legend(dc.legend().x(80).y(30).itemHeight(13).gap(5))
             .renderHorizontalGridLines(true)
             .compose([
@@ -168,6 +136,8 @@ function show_total_number_of_buses_per_year(ndx) {
             
 }
 
+// Function called to create usage of buses per year and reduce all values for number of buses.
+
 function show_buses_mostly_used_per_year(ndx) {
     
        var year_dim = ndx.dimension(dc.pluck('year'));
@@ -184,13 +154,12 @@ function show_buses_mostly_used_per_year(ndx) {
         var busesColors = d3.scale.ordinal()
                         .domain(["singleDeckTypeBus", "doubleDeckTypeBus", "articTypeBus",
                                 "routeMasterTypeBus", "newRouteMasterTypeBus"])
-                        .range(["black","green","red","yellow","blue"]);
+                        .range(["green","blue","black","yellow","red"]);
         
-        // console.log(most_group.all());
         
         var most_chart = dc.scatterPlot("#most-used-buses");
         most_chart
-            .width(650)
+            .width(850)
             .height(480)
             .x(d3.time.scale().domain([min_year, max_year]))
             .brushOn(false)
@@ -212,6 +181,7 @@ function show_buses_mostly_used_per_year(ndx) {
 }
 
 
+// Function created to show total number of buses with much relevance in pieChart and
     
 
 function show_total_number_of_buses(ndx) {
@@ -221,7 +191,7 @@ function show_total_number_of_buses(ndx) {
     
     dc.pieChart('#total-number-of-buses')
         .height(250)
-        .radius(150)
+        .radius(350)
         .transitionDuration(1500)
         .dimension(buses_dim)
         .group(total_buses);
@@ -230,6 +200,7 @@ function show_total_number_of_buses(ndx) {
         
 }
 
+// Function created to show all year round availabilty of buses on a pieChart
 
 function show_years_of_buses(ndx) {
     
@@ -238,7 +209,7 @@ function show_years_of_buses(ndx) {
     
     dc.pieChart('#buses-per-year')
         .height(250)
-        .radius(150)
+        .radius(350)
         .transitionDuration(1500)
         .dimension(years_dim)
         .group(total_years);
