@@ -8,9 +8,7 @@ function createGraphs(error, ndx) {
     var ndx = crossfilter(ndx);
     
     // calling parseInt on number_of_buses in data CSV file to display numbers only as a whole number
-    (function(d){
-     d.number_of_buses = parseInt(d.number_of_buses);
-    });
+    
     
     // This are the functions called to build each specified graphs
     
