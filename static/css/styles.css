@@ -1,18 +1,15 @@
-/* Import from Google Fonts */
+                      /* Import from Google Fonts */
+                      
 @import url('https://fonts.googleapis.com/css?family= Cormorant+Unicase:100,200,300,400,500,600,700,|Muli:200,300,400,500,600,700,|Nunito:100,200,300,400,500,600,700');
 
-body {
-    margin: 0 auto;
-    /*background:url('https://www.muralswallpaper.com/app/uploads/red-london-bus-city-plain-820x532.jpg') scroll, repeat, center, center;*/
-}
 
-.fade-main {
+.overlay-main {
     opacity:0.8;
 }
 
+
                         /*Navbar and NavBrand*/
-
-
+                        
 nav, .navbar-default {
     display: block;   
     position: relative;
@@ -28,7 +25,10 @@ nav, .navbar-default {
     font-weight: 600;
 }
 
-                 /*Background colors and styles*/
+
+                 /* Background and background colors */
+                 
+                 
 
 select {
     background-color: #b8d1f1;
@@ -60,7 +60,7 @@ img {
 
 
 
-/* Headers */
+                         /* Headers */
 
 h1 {
     color: #00b4ff;
@@ -91,6 +91,8 @@ h3 {
 }
 
 
+                             /* Sections */
+
 
 .section-heading, #types-of-buses {
     display: inline-block;
@@ -109,6 +111,8 @@ h3 {
 svg {
     margin: 0 auto;
 }
+
+                             /*Paragraphs*/
 
 
 .section-paragraph {
@@ -130,7 +134,7 @@ svg {
     font-family: 'Muli',sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 0.6;
+    line-height: 0.8;
 }
 
 
@@ -150,4 +154,28 @@ svg {
     top: 5%;
     padding-top: 50px;
     margin-top: 300px;
+}
+
+                   /* Media Queries */
+
+@media screen and (min-width: 168px) {
+   
+   .select-bg {
+       margin-top: 14px;
+   }
+   
+   .dc-chart h3{
+       margin-top: 70px;
+   }
+   
+}
+
+@media screen and (min-width: 768px) {
+    .select-bg {
+       margin-top: 7px;
+   }
+}
+
+@media screen and (min-width: 992px) {
+  
 }
