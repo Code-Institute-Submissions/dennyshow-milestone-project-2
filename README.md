@@ -14,26 +14,27 @@ The UX for this project is quite simple, it's mainly a Single Page Application(S
 The navigation is easy and smooth for users.
 The colour shceme was very simple and makes the site quite visible and readable.
 
-Please note I have insisted for the contrast of blue to be different as I was advised it
-will be more beneficial to have a lighter contrast for readability purposes.
 
 ## Features 
 
-* All the images for this project have been aquicred via google.
-
-* IntroJS was used to improve UX and navigate site.
+* Images for this project have been acquired via google.
 
 * Nav - Bootstrap used for quick production of modern CSS and use of their predefinded classes.
 
-* Videos section - All the videos used on this site are Youtube embeds. Youtube used for ease of access to
-view the bands videos so the user/fan does not have to be redirected from the bands site to see their youtube videos.
+* IntroJS was used to improve UX and navigate site.
 
-* Gallery -  Icons was used to improve the UX for the gallery when viewed by 
-a fan/visitor.
+* DC Charts - Was used to display all data on site
 
-* Wireframing- I just did some mock ups on paper of how the site generally look and feel. 
+* Favicons -  Icons was used to improve the UX for the logo when viewed by a fan/visitor.
+
+* Wireframing- I just did some mock ups on paper of how the site generally should look and feel. 
+
 
 ### Possible feature to implement 
+
+* Animate - Could be possible to add some anime interactions
+
+* 
 
 
 ### Getting Started
@@ -53,18 +54,20 @@ This site is supported all browsers. Check below for tested devices and browsers
 * [Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/) - The web framework used 
 * [W3 Schools](https://www.w3schools.com/html/default.asp) - Help & tips 
 * [Favicons](https://www.bootstrapcdn.com/fontawesome/) - Icons 
-* [IntroJS](https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css) - Animation
+* [IntroJS](https://introjs.com/#commercial) - IntroJS
 
 ### Frameworks used 
 
 * [Bootstrap 3.3.7](https://getbootstrap.com/)
 * [Font Awesome 4.7.0](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css)
 * [JQuery 3.2.1](https://jquery.com/download/)
-* [D3](https://jquery.com/download/)
-* [Crossfilter](https://jquery.com/download/)
-* [DC](https://jquery.com/download/)
-* [Queue](https://jquery.com/download/)
-* [IntroJS](https://jquery.com/download/)
+* [D3](https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js)
+* [Crossfilter](https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js)
+* [DC CSS](https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.min.css)
+* [DC JS](https://cdnjs.cloudflare.com/ajax/libs/dc/3.0.12/dc.min.js)
+* [Queue](https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js)
+* [IntroJS CSS](https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/introjs.min.css)
+* [IntroJS JavaScript](https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js)
 
 ## Custom Fonts 
 

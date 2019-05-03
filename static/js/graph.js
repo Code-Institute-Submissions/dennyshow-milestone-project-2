@@ -1,4 +1,6 @@
-// queuing data and passing it into d3 to create graphs
+//  to load data
+// pass data file
+// call function when data has downloaded
 queue()
     .defer(d3.csv, "data/tfl_buses_type.csv") 
     .await(createGraphs);
@@ -215,3 +217,8 @@ function show_years_of_buses(ndx) {
     dc.renderAll();
         
 }
+ 
+$(document).ready(function(){
+    $("#tour-start").trigger("click");
+});
+
