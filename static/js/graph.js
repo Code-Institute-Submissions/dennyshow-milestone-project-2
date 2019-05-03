@@ -217,8 +217,5 @@ function show_years_of_buses(ndx) {
     dc.renderAll();
         
 }
- 
-$(document).ready(function(){
-    $("#tour-start").trigger("click");
-});
 
+$("#site-tour").on()
