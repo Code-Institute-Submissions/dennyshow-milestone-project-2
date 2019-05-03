@@ -160,7 +160,7 @@ svg {
 @media screen and (min-width: 168px) {
    
    .select-bg {
-       margin-top: 14px;
+       margin-bottom: 18px;
    }
    
    .dc-chart h3{
@@ -170,11 +170,13 @@ svg {
 }
 
 @media screen and (min-width: 768px) {
-    .select-bg {
-       margin-top: 7px;
-   }
+   /* .select-bg {*/
+   /*    margin-top: 7px;*/
+   /*}*/
 }
 
 @media screen and (min-width: 992px) {
-  
+  .select-bg {
+      margin-bottom: 70px;
+  }
 }
