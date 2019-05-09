@@ -1,6 +1,8 @@
+
 //  to load data
-// pass data file
-// call function when data has downloaded
+//  pass data file
+//  call function when data has downloaded
+
 queue()
     .defer(d3.csv, "data/tfl_buses_type.csv") 
     .await(createGraphs);
@@ -9,10 +11,8 @@ queue()
 function createGraphs(error, ndx) {
     var ndx = crossfilter(ndx);
     
-    // calling parseInt on number_of_buses in data CSV file to display numbers only as a whole number
     
-    
-    // This are the functions called to build each specified graphs
+    // These are the functions called to build each specified graphs
     
     show_total_number_of_buses_per_year(ndx);
     show_years_of_buses(ndx);
@@ -215,7 +215,26 @@ function show_years_of_buses(ndx) {
         .group(total_years);
     
     dc.renderAll();
+    
         
 }
 
-$("#site-tour").on()
+// $(document).ready(function() {
+    
+    
+//     $("#site-tour").onload(function(){
+//         var message = "This is tour";
+//         alert(message);
+//     });
+    
+// });
+
+
+// $(document).ready(function() {
+    
+    
+//     $("#site-tour").onload(function(){
+//         alert("This is tour");
+//     });
+    
+// })
