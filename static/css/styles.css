@@ -1,6 +1,11 @@
                       /*Import from Google Fonts*/
 @import url('https://fonts.googleapis.com/css?family= Cormorant+Unicase:100,200,300,400,500,600,700,|Muli:200,300,400,500,600,700,|Nunito:100,200,300,400,500,600,700');
 
+body {
+    width:100%;
+    padding:0;
+    margin:0;
+}
 
 .overlay-main {
     opacity:0.8;
@@ -12,6 +17,7 @@
 nav, .navbar-default {
     display: block;   
     position: relative;
+    padding:0;
     background-color: navy;
 }
 
@@ -40,7 +46,6 @@ select {
     right:0;
     top:9%;
     line-height: 0.8;
-    margin-bottom: 5px;
 
     
     background-color: navy;
@@ -48,6 +53,7 @@ select {
 
 .chart-bg {
     background-color: #dfd9e280;
+   
 }
 
 img {
@@ -55,7 +61,6 @@ img {
     background-color: moccasin;
     
 }
-
 
 
 
@@ -89,6 +94,10 @@ h3 {
     background-color: navy;
 }
 
+.chart-header {
+    margin-top:80px;
+}
+
 
                              /* Sections */
 
@@ -104,6 +113,7 @@ h3 {
     border-bottom: 3px solid #e6e6e6;;
     padding: 50px 0px;
     background-color: #046fab5e;
+    
 
 }
 
@@ -146,13 +156,14 @@ svg {
 
 
 
+
 #tfl-logo {
     opacity: 0.38;
     position: fixed;
     right:0;
     top: 5%;
     padding-top: 50px;
-    margin-top: 300px;
+    margin-top: 280px;
 }
 
                    /* Media Queries */
