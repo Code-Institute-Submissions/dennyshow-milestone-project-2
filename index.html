@@ -24,7 +24,7 @@
     
 </head>
 
-<body>
+<body onload="javascript:introJs().start();">
     
     
                                  <!-- Bootstrap Navbar Start -->
@@ -37,7 +37,7 @@
     </div>
 </nav>
 
-<img id="tfl-logo" src="https://www.ltmuseum.co.uk/assets/TfL_logo_002.png" alt="Transport for London">
+<img id="tfl-logo" src="https://www.ltmuseum.co.uk/assets/TfL_logo_002.png" width=300px height=180px alt="Transport for London">
 
                                  <!-- Bootstrap Navbar End -->
                                  
@@ -48,14 +48,14 @@
   <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12 dc-chart text-center select-bg">
-            <h1 data-step="1" data-intro="This is a London Bus Transport Survey data dashboard, displaying various bus types!">London Buses Data Dashboard</h1>
-            <button id="site-tour" onclick="javascript:introJs().start();"> Start Tour </button>
+
+            <h1 data-step="1" data-intro="This is a London Bus Transport Survey data dashboard, displaying various bus types!" onclick="javascript:introJs().start();">London Buses Data Dashboard</h1>
             <p class="header-paragraph"> A representation of London Transport displayed interactively  </p>
                                         <!--Select Your Bus Type -->
              <h2 class="section-heading"> Select Your Bus </h2>
              
                                       <!--Selection box -->
-             <div id="types-of-buses"></div>
+             <div data-step="2" data-intro="SELECT any bus to view its data and SELECT ALL allows to view all bus data interactively" id="types-of-buses"></div>
         </div>
     </div>
   </div>
@@ -67,22 +67,22 @@
     
                                                 <!-- Types of Bus available -->
                         
-        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart">
+        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-header">
              <h3> <img src="https://img.icons8.com/ios/50/000000/trolleybus-filled.png" alt="Bus"> Bus Types</h3>
              <p class="section-paragraph">The Double Deck bus is mostly available than other buses for transport in London.</p>
              
                                                    <!-- Pie Chart Plot -->
-            <div id="total-number-of-buses"></div>
+            <div data-step="3" data-intro="Pie chart displays the number of buses available in London, Double Deck bus has the highest rank" id="total-number-of-buses"></div>
         </div>
                 
                                                   <!-- Types of fuel available used by each bus -->
                           
-        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-bg">
+        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-bg chart-header">
             <h3> <img src="https://img.icons8.com/ios/50/000000/gas-pump-filled.png" alt="Gas Pump"> Types Of Fuels</h3>
             <p class="section-paragraph">Buses in London operate on various types of fuel. The Diesel fuel has the highest used fuel by most buses</p>
             
                                                   <!-- Bar Chart Plot -->
-            <div id="types-of-fuel"></div>
+            <div data-step="4" data-intro="Bar chart displays fuels applicable per each type of buses. Diesel fuel is ranked the highest" id="types-of-fuel"></div>
                         
          </div>
                
@@ -97,23 +97,23 @@
            
                                                             <!-- Bus available for use each year-->
                                                  
-        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart">  
+        <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-header">  
             <h3> <img src="https://img.icons8.com/ios/50/000000/calendar-filled.png" alt="Calender"> Bus available each year</h3>
             <p class="section-paragraph">The pie chart illustrates bus types that are available and used through the year 2010 - 2018</p>
             
                                                  <!-- Pie Chart Plot-->
-            <div id="buses-per-year"></div> 
+            <div data-step="5" data-intro="Pie chart displays the total number of buses available in London per year" id="buses-per-year"></div> 
         </div>
            
            
                                                 <!-- Number of buses in each year -->
                 
-         <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-bg">
+         <div class="col-xs-12 col-sm-12 col-md-6 dc-chart chart-bg chart-header">
              <h3> <img src="https://img.icons8.com/ios/50/000000/double-decker-bus-filled.png" alt="Double Deck Bus"> Number of buses per year</h3>
              <p class="section-paragraph">The line chart displays the total number of bus types each year. Where some buses increases and some decreases due to lack of usage.</p>
              
                                                 <!--Line Chart Plot-->
-            <div id="yearly-number-of-buses"></div>
+            <div data-step="6" data-intro="Line Chart shows number of bus types available through the years. Some buses increasing and some decreasing" id="yearly-number-of-buses"></div>
         </div>
            
          
@@ -136,7 +136,7 @@
             <p class="section-paragraph">The scattered plot illustrates usage of each types of bus every year where some bus such as routemaster has the least amount of usage every year.</p>
             
                                               <!-- Scattered Plot -->
-            <div id="most-used-buses"></div>
+            <div data-step="7" data-intro="Scattered plot displays buses availability for use every year." id="most-used-buses"></div>
                          
          </div>
         
@@ -148,7 +148,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 text-center">
-                   <p><i class="fa fa-copyright"></i><strong>Copyright London Transport 2018 </strong></p>
+                   <p><strong>Copyright London Transport 2018 </strong></p>
             </div>
         </div>
     </div>
@@ -174,11 +174,12 @@
                           <!-- Queue -->
 <script  src="static/js/queue.min.js"></script>
 
+                        <!-- IntroJS -->
+<script  src="static/js/intro.min.js"></script>
+
                          <!-- My Script -->
 <script  src="static/js/graph.js"></script>
 
-                        <!-- IntroJS -->
-<script  src="static/js/intro.min.js"></script>
 
 </body>
 </html>
