@@ -26,19 +26,39 @@ function createGraphs(error, ndx) {
    dc.renderAll();
 }
 
-// calling data for types of buses
+// calling function for types of buses into a selector
 
 function show_bus_types(ndx) {
-    dim = ndx.dimension(dc.pluck('bus_type'));
-    group = dim.group()
+   var dim = ndx.dimension(dc.pluck('bus_type'));
+   var group = dim.group()
     
-    // calling dc selectMenu to allow selections of our various buses 
+    // calling dc.selectMenu placeholder to allow selections for various types of buses 
     dc.selectMenu("#types-of-buses")
         .dimension(dim)
         .group(group);
 }
 
-// calling data for types of fuel
+
+// Function called to show total number of buses with much relevance in pieChart
+    
+function show_total_number_of_buses(ndx) {
+    
+    var buses_dim = ndx.dimension(dc.pluck('bus_type'));
+    var total_buses = buses_dim.group().reduceSum(dc.pluck('number_of_buses'));
+    
+    dc.pieChart('#total-number-of-buses')
+        .height(250)
+        .radius(350)
+        .transitionDuration(1500)
+        .dimension(buses_dim)
+        .group(total_buses);
+    
+    dc.renderAll();
+        
+}
+
+
+// calling function for types of fuel
 
 function show_bus_fuel(ndx) {
     var dim = ndx.dimension(dc.pluck('drive_train_type'));
@@ -61,6 +81,27 @@ function show_bus_fuel(ndx) {
 }
 
 
+
+// Function created to show all year round availabilty of buses on a pieChart
+
+function show_years_of_buses(ndx) {
+    
+    var years_dim = ndx.dimension(dc.pluck('year'));
+    var total_years = years_dim.group().reduceSum(dc.pluck('number_of_buses'));
+    
+    dc.pieChart('#buses-per-year')
+        .height(250)
+        .radius(350)
+        .transitionDuration(1500)
+        .dimension(years_dim)
+        .group(total_years);
+    
+    dc.renderAll();
+    
+        
+}
+
+
 // function to create data for total number of buses per year and types
 
 function show_total_number_of_buses_per_year(ndx) {
@@ -68,13 +109,13 @@ function show_total_number_of_buses_per_year(ndx) {
             
         var year_dim = ndx.dimension(dc.pluck('year'));
         
-            // setting max and min year to be displayed
+            // setting max and min year to be displayed as in CSV file
             
         var minYear = year_dim.bottom(1)[0].year;
         var maxYear = year_dim.top(1)[0].year;
             
-            // function to create the total number of buses by bus type.
-            
+            // function to call for the total number of bus type.
+            // if statement to retrive data for number of buese per bus types
         function bus_total_per_year(busType) {
             return function (ndx) {
               if (ndx.bus_type === busType) {
@@ -84,7 +125,7 @@ function show_total_number_of_buses_per_year(ndx) {
               }
         };
     }
-            // variables was used to match each bus type and the total number of bus in each bus type 
+            // variables was used to match bus type with the total number of bus in each year. 
             
       var articTypeBus = year_dim.group().reduceSum(bus_total_per_year('Artic'));
           
@@ -136,7 +177,7 @@ function show_total_number_of_buses_per_year(ndx) {
             
 }
 
-// Function called to create usage of buses per year and reduce all values for number of buses.
+// Function called for usage of buses per year and reduce all values for number of buses.
 
 function show_buses_mostly_used_per_year(ndx) {
     
@@ -151,6 +192,7 @@ function show_buses_mostly_used_per_year(ndx) {
         
         var most_group = most_dim.group().reduceSum(dc.pluck('number_of_buses'));
         
+    
         var busesColors = d3.scale.ordinal()
                         .domain(["singleDeckTypeBus", "doubleDeckTypeBus", "articTypeBus",
                                 "routeMasterTypeBus", "newRouteMasterTypeBus"])
@@ -180,61 +222,3 @@ function show_buses_mostly_used_per_year(ndx) {
         dc.renderAll();
 }
 
-
-// Function created to show total number of buses with much relevance in pieChart and
-    
-
-function show_total_number_of_buses(ndx) {
-    
-    var buses_dim = ndx.dimension(dc.pluck('bus_type'));
-    var total_buses = buses_dim.group().reduceSum(dc.pluck('number_of_buses'));
-    
-    dc.pieChart('#total-number-of-buses')
-        .height(250)
-        .radius(350)
-        .transitionDuration(1500)
-        .dimension(buses_dim)
-        .group(total_buses);
-    
-    dc.renderAll();
-        
-}
-
-// Function created to show all year round availabilty of buses on a pieChart
-
-function show_years_of_buses(ndx) {
-    
-    var years_dim = ndx.dimension(dc.pluck('year'));
-    var total_years = years_dim.group().reduceSum(dc.pluck('number_of_buses'));
-    
-    dc.pieChart('#buses-per-year')
-        .height(250)
-        .radius(350)
-        .transitionDuration(1500)
-        .dimension(years_dim)
-        .group(total_years);
-    
-    dc.renderAll();
-    
-        
-}
-
-// $(document).ready(function() {
-    
-    
-//     $("#site-tour").onload(function(){
-//         var message = "This is tour";
-//         alert(message);
-//     });
-    
-// });
-
-
-// $(document).ready(function() {
-    
-    
-//     $("#site-tour").onload(function(){
-//         alert("This is tour");
-//     });
-    
-// })
