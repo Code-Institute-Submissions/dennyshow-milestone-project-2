@@ -8,7 +8,7 @@ body {
 }
 
 .overlay-main {
-    opacity:0.8;
+    opacity:0.9;
 }
 
 
@@ -18,13 +18,14 @@ nav, .navbar-default {
     display: block;   
     position: relative;
     padding:0;
+    margin-bottom: 2px;
     background-color: navy;
 }
 
 .navbar-default .navbar-brand {
     background-color: navy;
     color: moccasin;
-    font-size: larger;
+    font-size: 16px;
     font-family: 'Cormorant+Unicase',serif;
     font-style: oblique;
     font-weight: 600;
@@ -41,10 +42,9 @@ select {
 
 .select-bg {
     display: inline-block;
-    position: absolute;
-    left:0;
-    right:0;
-    top:9%;
+    position: relative;
+    padding-top: 8px;
+    padding-bottom: 8px;
     line-height: 0.8;
 
     
@@ -89,13 +89,14 @@ h3 {
     font-weight: 700;
     font-size: 30px;
     text-transform: uppercase;
-    
+    margin-top: 70px;
+    margin-bottom: 15px;
     color: white;
     background-color: navy;
 }
 
 .chart-header {
-    margin-top:80px;
+    margin-top:20px;
 }
 
 
@@ -110,12 +111,17 @@ h3 {
 
 
 .section {
-    border-bottom: 3px solid #e6e6e6;;
-    padding: 50px 0px;
+    padding: 50px 20px;
     background-color: #046fab5e;
-    
 
 }
+
+hr {
+    margin-bottom: 10px;
+    
+}
+
+
 
 svg {
     margin: 0 auto;
@@ -143,7 +149,7 @@ svg {
     font-family: 'Muli',sans-serif;
     font-weight: 400;
     font-size: 16px;
-    line-height: 0.8;
+    line-height: 1;
 }
 
 
@@ -160,34 +166,35 @@ svg {
 #tfl-logo {
     opacity: 0.38;
     position: fixed;
-    right:0;
+    right:1%;
     top: 5%;
     padding-top: 50px;
-    margin-top: 280px;
+    margin-top: 300px;
+}
+
+footer {
+    background-color: navy;
 }
 
                    /* Media Queries */
 
-@media screen and (min-width: 168px) {
+@media screen and (min-width: 576px) {
    
    .select-bg {
-       margin-bottom: 18px;
-   }
-   
-   .dc-chart h3{
-       margin-top: 70px;
+       margin-bottom: 0px;
    }
    
 }
 
 @media screen and (min-width: 768px) {
-   /* .select-bg {*/
-   /*    margin-top: 7px;*/
-   /*}*/
+    .select-bg {
+       margin-top: 0px;
+   }
 }
 
 @media screen and (min-width: 992px) {
   .select-bg {
-      margin-bottom: 70px;
+      margin-bottom: 0px;
   }
 }
+
