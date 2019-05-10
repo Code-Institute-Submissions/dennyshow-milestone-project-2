@@ -111,15 +111,16 @@ h3 {
 
 
 .section {
+    border-bottom: 2px solid #006992;
     padding: 50px 20px;
     background-color: #046fab5e;
 
 }
 
-hr {
-    margin-bottom: 10px;
+/*hr {*/
+/*    margin-bottom: 10px;*/
     
-}
+/*}*/
 
 
 
@@ -176,25 +177,25 @@ footer {
     background-color: navy;
 }
 
-                   /* Media Queries */
+                    /*Media Queries */
 
 @media screen and (min-width: 576px) {
    
    .select-bg {
-       margin-bottom: 0px;
+       margin: 0px;
    }
    
 }
 
 @media screen and (min-width: 768px) {
     .select-bg {
-       margin-top: 0px;
+       margin: 0px;
    }
 }
 
 @media screen and (min-width: 992px) {
   .select-bg {
-      margin-bottom: 0px;
+      margin: 0px;
   }
 }
 
