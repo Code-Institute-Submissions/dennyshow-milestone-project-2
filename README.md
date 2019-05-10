@@ -3,38 +3,39 @@
 ## My second Milestone Project
 
 Throughout this project I will be using the technologies that I have learnt so far from Code Institue.
-This project will consist of HTML5, CSS3 and JavaScript.
+This project will consist of HTML5, CSS3, JQuery and JavaScript code.
 
-My site is designed for London Bus Transport.
+The site designed was a London Bus Transport SPA. 
+Data was retrieved via TFL in a CSV file
 I have decided to follow the project requirement provided in brief.
 
 ## UX
 
 The UX for this project is quite simple, it's mainly a Single Page Application(SPA) site. 
-The navigation is easy and smooth for users.
-The colour shceme was very simple and makes the site quite visible and readable.
-
+The navigation is easy and smooth for users. It starts when the page loads.
+The colour shceme was very simple and makes the site quite clear and readable enough for users.
+The Charts was allowed to scroll incase user is viewing from smaller devices.
 
 ## Features 
 
 * Images for this project have been acquired via google.
 
-* Nav - Bootstrap used for quick production of modern CSS and use of their predefinded classes.
+* Navbar - Bootstrap used for quick production of modern CSS and use of their predefinded classes.
 
-* IntroJS was used to improve UX and navigate site.
+* Button - Was used to allow user navigate easily on page.
 
-* DC Charts - Was used to display all data on site
+* IntroJS - was used to improve UX and tour users around when page loads or when the button is clicked 
 
-* Favicons -  Icons was used to improve the UX for the logo when viewed by a fan/visitor.
+* DC Charts - Was used to render all charts on page to display.
 
-* Wireframing- I just did some mock ups on paper of how the site generally should look and feel. 
+* Favicons -  Icons was used to improve the UX for the logo when viewed by a user/visitor.
+
+* Wireframing- I just did some mock ups on paper with pen of how the site generally should look and feel. 
 
 
 ### Possible feature to implement 
 
-* Animate - Could be possible to add some anime interactions
-
-* 
+* Animate - Try to add some anime interactions in charts
 
 
 ### Getting Started
@@ -45,21 +46,21 @@ The website is built using **HTML5**, **CSS3** and **Bootstrap** framework,  **J
 
 The site is fully functional without any local files needed to be downloaded all frameworks and scripts
 used are loaded via an approved CDN. Before deployment the site was tested on several browsers and devices.
-This site is supported all browsers. Check below for tested devices and browsers.
+This site is supported on all browsers. Check below for tested devices and browsers.
 
-# [Live Demo Here](https://milestone-project-data-dashboard-dennyshow.c9users.io/index.html)
+# [Live Demo Here](https://dennyshow.github.io/milestone-project-2/)
 
 ### External sites used 
 
 * [Bootstrap](https://getbootstrap.com/docs/3.3/getting-started/) - The web framework used 
 * [W3 Schools](https://www.w3schools.com/html/default.asp) - Help & tips 
-* [Favicons](https://www.bootstrapcdn.com/fontawesome/) - Icons 
+* [Favicons](https://favicon.io/) - Icons 
 * [IntroJS](https://introjs.com/#commercial) - IntroJS
 
 ### Frameworks used 
 
 * [Bootstrap 3.3.7](https://getbootstrap.com/)
-* [Font Awesome 4.7.0](https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css)
+* [Icon8](https://icons8.com/icons)
 * [JQuery 3.2.1](https://jquery.com/download/)
 * [D3](https://cdnjs.cloudflare.com/ajax/libs/d3/5.9.2/d3.min.js)
 * [Crossfilter](https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js)
@@ -71,19 +72,27 @@ This site is supported all browsers. Check below for tested devices and browsers
 
 ## Custom Fonts 
 
-I used fonts from **@googleapis CSS 'Muli Nunito Cormorant+Unicase'** to create difference in headers and paragrapgh styles.
+I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to create difference in headers, sections and paragrapgh styles.
 
 ## Technologies used
 
-* Jquery - Was used to allow carousel and animation function when clicked. [Jquery](https://jquery.com/)
+* Jquery - Was used to allow charts and introJS to function when clicked. [Jquery](https://jquery.com/)
 
-* IntroJS - Was used to add effect to webpage for a great user experince [Animate.css](https://cdnjs.com/)
+* IntroJS - Was used to add tour effect to webpage for a great user experince [introJS](https://cdnjs.com/)
 
 * Bootstrap JS - For easy dropdown during user experince navigation [Bootstrap](https://maxcdn.bootstrapcdn.com/)
 
-* Favicons - Used to improve UX when viewing the webpage. [Favicon-generator](https://www.favicon-generator.org/)
+* Favicons - Used to improve UX when viewing the top of the webpage. [Favicon-generator](https://favicon.io/favicon-generator/)
 
 * Bootstrap Classes - To trigger more styles and reduce CSS over-styling [Bootstrap](https://getbootstrap.com/docs/3.3/)
+
+* D3  - Used to manipulate documents in the data [D3.js](https://d3js.org/)
+
+* DC - Used to enable charts to be built and displayed from manipulated data [DC.js](https://dc-js.github.io/dc.js/)
+
+* Crossfilter - Used to allow charts to be interdependent and interactive [Crossfilter](https://square.github.io/crossfilter/)
+
+* Queue - Used to bind all external data source in CSV file [Queue.js](https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js)
 
 
 
@@ -168,10 +177,22 @@ I used fonts from **@googleapis CSS 'Muli Nunito Cormorant+Unicase'** to create 
 
 ## Deployment 
 
+Created a new repositories on **Github** where the project will be deployed unto at each commit.
+At first, use a **git remote** command to link project with new repo.
+Then use the **git push -u origin master** command to push codes and every change into new repo
+
+Using the CLI in terminal to call **git init** to start git initialization on the project.
+This allows a file/files to be added to the Github repo by calling a **git add** command.
+Then any added file/files is being commited with a **git commit -m "commit message"** command.
+Afterwards, the file is been pushed with **git push** where Github username + password is required.
+Once successful, code will be deployed into your repo and **git status** command should indicate branch tree clean.
+
+
 ### HTML & CSS
 
 All my mark up is **HTML valid**
 All my styling is **CSS valid**
+All my syntax is **JavaScript syntactically valid**
 
 #### Version Used
 
@@ -179,17 +200,17 @@ I will use [GitHub](github.com) for version control.
 
 ### Authors
 
-**Dehinde - Shogbanmu** - *Project 1* 
+**Dehinde - Shogbanmu** - *Project 2* 
 
 
 
 ## Credits
 
 ### Content 
-The text for the about section was copied from wikipedia
+The images was retrieved from Google
+The logos where retrived from icon8
+The data was retrived from data.london.gov.uk
 
-### Media 
-All media was provided by the band representative and some were pulled via google serach.
 
 ### Acknowledgements
 I received inspiration for this project via my mentor
