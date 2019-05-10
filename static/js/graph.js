@@ -221,4 +221,3 @@ function show_buses_mostly_used_per_year(ndx) {
             
         dc.renderAll();
 }
-
