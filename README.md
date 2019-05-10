@@ -113,23 +113,26 @@ I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to creat
 | Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |      No    |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 |    Tested      |      IE       | Functions  |
 | -------------  |:-------------:|  ---------:|
-| Navbar         |    Yes        |  Partially |
+| Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |      No    |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 |    Tested      | Android & Tablet | Functions  |
-| -------------  |:----------------:|  ---------:|
-| Navbar         |    Yes           |  Partially |
+| -------------  |:----------------:| ---------: |
+| Navbar         |    Yes           |     Yes    |
 | Charts         |    Yes           |     Yes    |
 | Images         |    Yes           |     Yes    |
-| Select BTN     |    Yes           |     No     |
+| Select BTN     |    Yes           |     Yes    |
+| Tour BTN       |    Yes           |     Yes    |
 
 
 |    Tested      | Samsung S6-S9 | Functions  |
@@ -137,7 +140,8 @@ I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to creat
 | Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |     No     |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 
@@ -146,7 +150,8 @@ I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to creat
 | Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |     No     |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 
@@ -155,15 +160,17 @@ I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to creat
 | Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |      No    |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 |    Tested      |     Opera     | Functions  |
 | -------------  |:-------------:|  ---------:|
-| Navbar         |    Yes        |  Partially |
+| Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |     No     |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
 
 
 |    Tested      |     Safari    | Functions  |
@@ -171,7 +178,22 @@ I used fonts from **@googleapis CSS 'Muli, Nunito, Cormorant+Unicase'** to creat
 | Navbar         |    Yes        |     Yes    |
 | Charts         |    Yes        |     Yes    |
 | Images         |    Yes        |     Yes    |
-| Select BTN     |    Yes        |      No    |
+| Select BTN     |    Yes        |     Yes    |
+| Tour BTN       |    Yes        |     Yes    |
+
+
+## DOM Testing
+
+|    Tested      |     DOM       | Functions  |
+| -------------  |:-------------:|  ---------:|
+| Data           |    Yes        |     Yes    |
+| Keys           |    Yes        |     Yes    |
+| Values         |    Yes        |     Yes    |
+| Body           |    Yes        |     Yes    |
+| Images         |    Yes        |     Yes    |
+| Elements       |    Yes        |     Yes    |
+| Charts         |    Yes        |     Yes    |
+
 
 
 
